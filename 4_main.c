@@ -4,14 +4,21 @@
 #include<stdio.h>
 int main()
 {
-    int a,b,c;
-    printf("请输入三个整数");
-    scanf("%d %d %d",&a,&b,&c);
-    if(a+b>c &&a+c>b &&b+c>a)
-    {printf("可以组成三角形");}
-    else
-    {printf("不可以组成三角形");}
-    return 0;
-
-
+    int i=100;
+    
+    while(i<=999)
+    {
+        int a=i/100;
+        int b=(i/10)%10;
+        int c=i%10;
+        if (a*a*a+b*b*b+c*c*c==i)
+       {
+        printf("%d ",i);
+      }
+     i++;
+  
+    }
+     
+      printf("\b");
+     return 0;
 }
