@@ -2,25 +2,31 @@
 //17325356009@163.com
 //王一帆
 #include<stdio.h>
+int calculateSum(int arr[],int length)
+{
+    int sum=0;
+    for (int i=0;i<length;i++)
+    {sum+=arr[i];}
+    return sum;
+
+}
+int calculateProduct(int arr[],int length)
+{
+    int Product=1;
+    for (int i=0;i<length;i++)
+    {Product*=arr[i];}
+    return Product;
+
+}
 int main()
 {
     int arr[5];
-    int i;
-    for(i=0;i<5;i++)
+    for(int i=0;i<5;i++)
     {
-        int num;
-        do{
-            scanf("%d",&num);
-        }
-        while (num % 2 !=0);
-        arr[i]=num;
+        scanf("%d",&arr[i]);
     }
-    for(i=0;i<5;i++)
-    {
-        printf("%d ",arr[i]);
-    }
-    printf("\b");
-    return 0;
-
-
+        int sum=calculateSum(arr,5);
+        int product=calculateProduct(arr,5);
+        printf("%d %d\n",sum,product);
+        return 0;
 }
