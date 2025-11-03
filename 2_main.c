@@ -3,16 +3,21 @@
 //王一帆
 #include<stdio.h>
 int main()
-{
-    int a,b,c,i;
-    for(i=100;i<=999;i++)
+{int arr[3][3];
+    int i,j;
+    for(i=0;i<3;i++)
     {
-        a=i/100;
-        b=(i/10)%10;
-        c=i%10;
-        if(i==a*a*a+b*b*b+c*c*c)
-       { printf("%d ",i);}
+        for(j=0;j<3;j++)
+        {scanf("%d",&arr[i][j]);}
     }
-    printf("\b");
+     for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        if(j==0)
+        {printf("%d",arr[j][i]);}
+        else  {printf(" %d",arr[j][i]);}
+         printf("\n");
+    }
+   
     return 0;
-}
+    }
