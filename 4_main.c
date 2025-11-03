@@ -2,23 +2,15 @@
 //17325356009@163.com
 //王一帆
 #include<stdio.h>
+int power(int a,int b){
+    int result=1;
+    for (int i=0;i<b;i++)
+    {result*=a;}
+    return result;
+}
 int main()
 {
-    int i=100;
-    
-    while(i<=999)
-    {
-        int a=i/100;
-        int b=(i/10)%10;
-        int c=i%10;
-        if (a*a*a+b*b*b+c*c*c==i)
-       {
-        printf("%d ",i);
-      }
-     i++;
-  
-    }
-     
-      printf("\b");
-     return 0;
+    int sum=power(1,2)+power(2,2)+power(3,2)+power(4,2)+power(5,2);
+    printf("%d\n",sum);
+    return 0;
 }
