@@ -2,18 +2,30 @@
 //17325356009@163.com
 //王一帆
 #include<stdio.h>
-int arithmeticSum(int a1,int an,int step)
+void f(int *aptr_arr,int len)
 {
-   int n=(an-a1)/step+1;
-   return(a1+an)*n/2;
-
+    int *p=aptr_arr;
+    for(int i=len-2;i>=0;i--)
+    {
+       *(aptr_arr+i+1)= *(aptr_arr+i);
+    }
+    *aptr_arr=0;
 }
 int main()
 {
-    int sum=arithmeticSum(1, 100, 1);
-    printf("%d\n",sum);
+    int i;
+    int arr[5];
+    printf("请输入\n");
+    for(i=0;i<5;i++)
+    {   
+    scanf("%d",&arr[i]);
+    }
+    
+    f(arr,5);
+    for(i=0;i<5;i++)
+    {   
+    printf("%d ",arr[i]);
+    }
+ printf("\n");
     return 0;
 }
-
-
-
