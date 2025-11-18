@@ -2,32 +2,34 @@
 //17325356009@163.com
 //王一帆
 #include<stdio.h>
-void reverseArray(int arr[],int length)
+void bubble_sort(int *arr,int n)
 {
-    int left=0;
-    int right=length-1;
-    int a;
-    while(left<right)
+    for(int i=0;i<n-1;i++)
     {
-        a=arr[left];
-       arr[left]=arr[right];
-       arr[right]=a;
-       left++;
-       right--;
+        for(int j=0;j<n-i-1;j++)
+        {
+            if(*(arr+j)>*(arr+j+1))
+            {int a=*(arr+j);
+             *(arr+j)=*(arr+j+1);
+            *(arr+j+1)=a;
+            }
+        }
     }
 }
-
-
-    int main()
+int main()
 {
-    int arr[5];
-    for(int i=0;i<5;i++)
-    {scanf("%d",&arr[i]);}
-    reverseArray(arr, 5);
-    for(int i=0;i<5;i++)
-    if(i==0)
-    {printf("%d",arr[i]);}
-    else 
-    {printf(" %d",arr[i]);}
+    int arr[10];
+    int n=sizeof(arr)/sizeof(arr[0]);
+    printf("请输入\n");
+    for(int i=0;i<10;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    bubble_sort(arr,n);
+    for(int i=0;i<10;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
     return 0;
 }
