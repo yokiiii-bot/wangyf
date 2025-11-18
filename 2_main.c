@@ -3,21 +3,29 @@
 //王一帆
 #include<stdio.h>
 int main()
-{int arr[3][3];
-    int i,j;
-    for(i=0;i<3;i++)
+{
+    int arr[5];
+    int *p=arr;
+    int i;
+    printf("请输入五个数字\n");
+    for(i=0;i<5;i++)
     {
-        for(j=0;j<3;j++)
-        {scanf("%d",&arr[i][j]);}
+        scanf("%d",p);
+        p++;
     }
-     for(i=0;i<3;i++)
+    p=arr;
+    for(i=0;i<5;i++)
     {
-        for(j=0;j<3;j++)
-        if(j==0)
-        {printf("%d",arr[j][i]);}
-        else  {printf(" %d",arr[j][i]);}
-         printf("\n");
+        *p=*p*2;
+        p++;
     }
-   
+    p=arr;
+    for(i=0;i<5;i++)
+    {
+        printf("%d ",*p);
+        p++;
+    }
+    printf("\n");
     return 0;
-    }
+
+}
